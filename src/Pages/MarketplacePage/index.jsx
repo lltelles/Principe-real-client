@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import { Box, Button, CardActionArea, CardActions } from '@mui/material';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import './index.css'
 
 const API_URL = 'http://localhost:5005'
 
@@ -30,15 +31,11 @@ export default function MarketplacePage() {
   }, [])
 
   return (
-    <div>
+    <div id='services-wrap'>
       {services.map((service) => {
         return (
           <div key={service._id}>
-            <Box sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: 4
-            }}>
+            <Box>
               <Card sx={{
                 maxWidth: 345,
                 mt: 4,
