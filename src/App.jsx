@@ -8,6 +8,7 @@ import Homepage from './Pages/Homepage';
 import NeighborhoodPage from './Pages/NeighborhoodPage';
 import { Container } from '@mui/material';
 import SignupPage from './Pages/SignupPage';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -16,12 +17,13 @@ function App() {
     <Container>
       <HideAppBar />
       <Routes>
-        <Route path='/marketplace' element={<MarketplacePage />} />
+        <Route path='/' element={<Homepage />} />
+        <Route path='/marketplace' element={<MarketplacePage/>} />
         <Route path='/neighborhood' element={<NeighborhoodPage />} />
         <Route path='/signup' element={<SignupPage />} />
-        <Route path='/' element={<Homepage/>}/>
       </Routes>
-      </Container>
+      <Footer/>
+    </Container>
 
   )
 }

@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import { Container } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
+import { Link as ScrollLink } from 'react-scroll';
 import './index.css'
 
 function HideOnScroll(props) {
@@ -30,7 +31,6 @@ function HideOnScroll(props) {
 
 HideOnScroll.propTypes = {
     children: PropTypes.element.isRequired,
-
     window: PropTypes.func,
 };
 
@@ -41,31 +41,29 @@ export default function HideAppBar(props) {
             <CssBaseline />
             <HideOnScroll {...props}>
 
-                <AppBar sx={{backgroundColor: 'rgba(154, 207, 255, 1.0)'}}>
+                <AppBar sx={{ backgroundColor: '#8a8f8f', }}>
                     <Toolbar sx={{ display: 'flex', justifyContent: 'center' }}>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Principe + Real
+                            <img src='Pe+ºas individuais principe+real/Logo + Simbolos/logo 1.png' style={{ width: '150px', height: 'auto', filter: 'brightness(0) invert(1)' }} />
                         </Typography>
-                        <div>
-                            <Link to='/'>
-                                <Button id='navbar-btn'>Home</Button>
-                            </Link>
-                            <Link to='/about'>
-                                <Button id='navbar-btn'>About Us</Button>
-                            </Link>
-                            <Link to='/marketplace'>
-                                <Button id='navbar-btn'>MarketPlace</Button>
-                            </Link>
-                            <Link to='/neighborhood'>
-                                <Button id='navbar-btn'>Neighborhood</Button>
-                            </Link>
-                            <Link to='/login'>
-                                <Button id='navbar-btn'>Login</Button>
-                            </Link>
-                            <Link to='/signup'>
-                                <Button id='navbar-btn'>Sign Up</Button>
-                            </Link>
-                        </div>
+                        <Link to="/">
+                            <Button id="navbar-btn">Home</Button>
+                        </Link>
+                        <ScrollLink to="about" smooth={true} duration={50}>
+                            <Button id="navbar-btn">About Us</Button>
+                        </ScrollLink>
+                        <ScrollLink to="marketplace" smooth={true} duration={50}>
+                            <Button id="navbar-btn">MarketPlace</Button>
+                        </ScrollLink>
+                        <ScrollLink to="neighborhood" smooth={true} duration={50}>
+                            <Button id="navbar-btn">Neighborhood</Button>
+                        </ScrollLink>
+                        <Link to="/login">
+                            <Button id="navbar-btn">Login</Button>
+                        </Link>
+                        <Link to="/signup">
+                            <Button id="navbar-btn">Sign Up</Button>
+                        </Link>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>

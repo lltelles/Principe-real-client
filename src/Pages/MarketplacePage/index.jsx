@@ -9,6 +9,8 @@ import { Box, Button, CardActionArea, CardActions } from '@mui/material';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './index.css'
+import Paper from '@mui/material/Paper';
+
 
 const API_URL = 'http://localhost:5005'
 
@@ -35,36 +37,39 @@ export default function MarketplacePage() {
       {services.map((service) => {
         return (
           <div key={service._id}>
-            <Box>
-              <Card sx={{
-                maxWidth: 345,
-                mt: 4,
-                borderRadius: 3,
+            <Paper elevation={10} sx={{borderRadius: 3}}>
+              <Box>
+                <Card sx={{
+                  maxWidth: 345,
+                  mt: 4,
+                  borderRadius: 3,
 
-              }}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image="public/Images/img1.jpg"
-                    alt="green iguana"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {service.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {service.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    See more
-                  </Button>
-                </CardActions>
-              </Card>
-            </Box>
+                }}>
+
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image="/Images/img1.jpg"
+                      alt="green iguana"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {service.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {service.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      See more
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Box>
+            </Paper>
           </div>
         )
       })}
